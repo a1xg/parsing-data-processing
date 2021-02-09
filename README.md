@@ -24,35 +24,43 @@ DIR = 'test_dataset.csv'
 Create a class object and specify the path of the CSV file,
 the main language of the analyzed data and the minimum word
 length, less than which words will be deleted
-# data = CSV_preprocessing(dir=DIR, lang='russian', min_len=2)
-
+```python
+data = CSV_preprocessing(dir=DIR, lang='russian', min_len=2)
+```
 Removing invalid keywords
-# words = ['фгуп','пао','оао','ао','зао']
-# data.replaceKeywords(label='name', keywords=words, stemming=False)
-
+```python
+words = ['фгуп','пао','оао','ао','зао']
+data.replaceKeywords(label='name', keywords=words, stemming=False)
+```
 Removing invalid keywords
-# words3 = ['торговая','компания']
-# data.replaceKeywords(label='about', keywords=words3, stemming=True)
-
+```python
+words3 = ['торговая','компания']
+data.replaceKeywords(label='about', keywords=words3, stemming=True)
+```
 Select a data column for analysis and delete the entire data
 row if it contains ignored words
-# words2 = ['другие', 'страны', 'беларусь', 'украина']
-# data.removeRowByKeyword(label='region', keywords=words2, stemming=False)
-
+```python
+words2 = ['другие', 'страны', 'беларусь', 'украина']
+data.removeRowByKeyword(label='region', keywords=words2, stemming=False)
+```
 Select the data column, load the prepared list of marked words.
 For example, a row whose cell contains the word, we want to save, are marked with "1".
 Rows containing words marked with "0" will be deleted.
-# data.removeRowByBolean(label='region', dir='city_database/city.csv', stemming=False)
-
+```python
+data.removeRowByBolean(label='region', dir='city_database/city.csv', stemming=False)
+```
 We prepare the text from the data column of interest, for which we need to make an LSF
 Warning, rows containing NaN cells will be removed from the dataframe.
 Rows, the analyzed cell of which contains only unique words
 that do not occur in the dataset will also be deleted,this does not affect the analysis result.
-# data.getLSAdata('about')
-
+```python
+data.getLSAdata('about')
+```
 
 Run LSA analysis
-# data.runLSA(threshold=0.05)
+```python
+data.runLSA(threshold=0.05)
+```
 The threshold parameter is selected for each data set individually,
 and determines the level of association of dendrogram branches at which
 the clusters will be cut and selected.
@@ -61,8 +69,12 @@ cannot always give a sufficient level of correct answers on the labeled data.
 
 
 If the clustering result meets the expectations, then add labels to the additional column of the dataframe
-# data.addLSAmarks()
-# print(data.df)
+```python
+data.addLSAmarks()
+print(data.df)
+```
 
-save the updated dataset in CSV
-# data.write_csv()
+Save the updated dataset in CSV
+```python
+data.write_csv()
+```
