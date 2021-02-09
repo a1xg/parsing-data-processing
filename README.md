@@ -7,7 +7,7 @@ A set of tools for processing СSV files, based on a Pandas dataframe, with the 
 - Deleting a data line by a list of pre-marked keywords from a CSV file
 - Removing keywords
 - Latent semantic analysis for the selected data column (the clustering result is not
-- always correct, requires an experimental approach).
+  always correct, requires an experimental approach).
 - Assigning an LSA cluster label to data rows.
 - save CSV
 
