@@ -1,8 +1,8 @@
-# parsing-data-processing
+ parsing-data-processing
 A set of tools for processing СSV files, based on a Pandas dataframe, with the possibility of latent semantic analysis of texts.
-
-# A set of tools for processing tabular data of the DSV obtained by parsing web pages.
-# Released:
+=====================================================================
+- A set of tools for processing tabular data of the DSV obtained by parsing web pages.
+- Released:
 # Delete row of data by keyword
 # Deleting a data line by a list of pre-marked keywords from a CSV file
 # Removing keywords
@@ -11,7 +11,7 @@ A set of tools for processing СSV files, based on a Pandas dataframe, with the 
 # Assigning an LSA cluster label to data rows.
 # save CSV
 
-Get started:
+Quick Start:
 # Path to CSV file (File encoding must be UTF-8, ';' separated)
 # test dataset: 200 different companies with contact details,
 # information about the region, etc. The text information
