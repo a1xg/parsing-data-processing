@@ -1,4 +1,4 @@
-Parsing-data-processing
+Parsing-data-processing (with LSA)
 =====================================================================
 A set of tools for processing СSV files, based on a Pandas dataframe, with the possibility of latent semantic analysis of texts.
 - A set of tools for processing tabular data of the DSV obtained by parsing web pages.
