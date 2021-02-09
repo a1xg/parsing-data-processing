@@ -17,8 +17,9 @@ Path to CSV file (File encoding must be UTF-8, ';' separated)
 test dataset: 200 different companies with contact details,
 information about the region, etc. The text information
 is not complete, written in different forms using special characters.
-# DIR = 'test_dataset.csv'
-
+```python
+DIR = 'test_dataset.csv'
+```
 
 Create a class object and specify the path of the CSV file,
 the main language of the analyzed data and the minimum word
