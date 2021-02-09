@@ -155,7 +155,7 @@ class CSV_preprocessing:
         return filtred_words
 
     def __singleWordDetection(self, texts):
-        ''' The module accepts lists containing words,
+        ''' The method accepts lists containing words,
          combines several lists into one,
          carries out stemming of words,
          Returns a list of single words.
@@ -207,7 +207,7 @@ class CSV_preprocessing:
         return wdict, prepared_words
 
     def read_csv(self, path):
-        '''Module for opening CSV files, returns dataframe with data'''
+        '''Method for opening CSV files, returns dataframe with data'''
         dataframe = pd.read_csv(path, sep=';', header=0, encoding="utf-8")
         return dataframe
 
@@ -228,15 +228,13 @@ class LSA:
         self.threshold = threshold
 
         self.labels = []
-        # frequency matrix
         self.matrix = self.__freq_matrix()
-        # Получаем cингулярно разложенные матрицы U, S, Vt
         self.U, self.S, self.Vt, self.data_word = self.__svd()
 
         self.draw_result()
 
     def __freq_matrix(self):
-        '''Построение и нормализация частотной матрицы'''
+        '''Frequency matrix construction and normalization'''
         matrix = np.zeros([len(self.prepared_words), len(self.cleared_text)])
         self.prepared_words.sort()
 
@@ -244,7 +242,7 @@ class LSA:
             for j in self.wdict[k]:
                 matrix[i, j] += 1
 
-        # TF-IDF нормализация матрицы А
+        # TF-IDF matrix
         wpd = np.sum(matrix, axis=0)
         dpw = np.sum(np.asarray(matrix > 0, 'i'), axis=1)
         rows, cols = matrix.shape
