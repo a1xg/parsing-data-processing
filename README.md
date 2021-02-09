@@ -49,7 +49,7 @@ Rows containing words marked with "0" will be deleted.
 ```python
 data.removeRowByBolean(label='region', dir='city_database/city.csv', stemming=False)
 ```
-We prepare the text from the data column of interest, for which we need to make an LSF
+We prepare the text from the data column of interest, for which we need to make an LSA
 Warning, rows containing NaN cells will be removed from the dataframe.
 Rows, the analyzed cell of which contains only unique words
 that do not occur in the dataset will also be deleted,this does not affect the analysis result.
