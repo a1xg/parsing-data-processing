@@ -1,4 +1,15 @@
-from csv_postprocessing import CSV_preprocessing, LSA
+from csv_postprocessing import CSV_preprocessing
+
+
+# Package version:
+# python 3.9
+# numpy 1.19.5
+# pandas 1.1.4
+# nltk 3.5
+# scipy 1.6.0
+# matplotlib 3.3.3
+
+
 
 # Path to CSV file (File encoding must be UTF-8, ';' separated)
 DIR = 'test_dataset.csv'

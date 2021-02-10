@@ -1,10 +1,8 @@
-import csv
 import os
 import re
 import numpy as np
 import pandas as pd
 import nltk
-from nltk.corpus import brown
 from nltk.stem import SnowballStemmer
 from scipy.spatial.distance import pdist
 from scipy.cluster import hierarchy
@@ -40,7 +38,7 @@ class CSV_preprocessing:
 
     def replaceKeywords(self, label, keywords, stemming):
         """
-        Метод удаляет пользовательские ключевые слова из анализируемого текста в указанной колонке label.
+        The method removes custom keywords from the parsed text in the specified label column.
 
         label: str
 
@@ -230,8 +228,7 @@ class LSA:
         self.labels = []
         self.matrix = self.__freq_matrix()
         self.U, self.S, self.Vt, self.data_word = self.__svd()
-
-        self.draw_result()
+        self.show_result()
 
     def __freq_matrix(self):
         '''Frequency matrix construction and normalization'''
@@ -271,7 +268,7 @@ class LSA:
 
         return (U, S, Vt, data_word)
 
-    def draw_result(self):
+    def show_result(self):
         plt.figure()
         dist = pdist(self.data_word, 'euclidean')  # Calculate Euclidean distance
         Z = hierarchy.linkage(dist, method='average')  # allocating clusters
@@ -295,6 +292,10 @@ class LSA:
         Z = hierarchy.linkage(dist, method='average')
 
         self.labels = fcluster(Z, t=self.threshold, criterion='distance')
-        print('name_docs CLUSTERS1: \n', self.labels)
+        print('CLUSTERS: \n', self.labels)
         plt.figure()
         hierarchy.dendrogram(Z, labels=row_indices, color_threshold=self.threshold, leaf_font_size=8, count_sort=True, orientation='right')
+        plt.show()
+
+
+
